@@ -5,6 +5,7 @@ import { FaEnvelope } from "react-icons/fa";
 import { GoEllipsis } from "react-icons/go";
 import { IoIosEyeOff } from "react-icons/io";
 import InputField from "../components/InputField";
+import Logo from "../components/Logo";
 import "../styles/login.css";
 
 const Login = (props) => {
@@ -32,7 +33,7 @@ const Login = (props) => {
   return (
     <div className="login">
       <div>
-
+        <Logo style={{ width: "100%" }} />
         <div className="container">
           <InputField
             icon={FaEnvelope}

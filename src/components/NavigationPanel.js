@@ -2,12 +2,25 @@ import { useNavigate, NavLink } from "react-router-dom";
 import { useAuth } from "../contexts/auth";
 // import { navigationOptions } from "../constants/navigationOptions";
 // import signOutImage from "../assets/signOutImage.png";
+import Logo from "../components/Logo";
 import "../styles/navigationPanel.css";
 
 const navigationOptions = [
   {
-    path: "/",
+    path: "/dashboard",
     name: "Dashboard",
+  },
+  {
+    path: "/settings",
+    name: "Settings",
+  },
+  {
+    path: "/users",
+    name: "Users",
+  },
+  {
+    path: "/w",
+    name: "whatever",
   },
 ];
 
@@ -22,7 +35,10 @@ const NavigationPanel = (props) => {
 
   return (
     <div className="navigation-panel">
-      {/* <Logo /> */}
+      <Logo
+        style={{ width: "90%", marginTop: "20px" }}
+        imgStyle={{ width: "90%" }}
+      />
       <div className="options-container">
         <ul>
           {navigationOptions.map((option) => {
