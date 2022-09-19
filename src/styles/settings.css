@@ -1,0 +1,82 @@
+.settings {
+    display: flex;
+    flex-grow: 100;
+    width: 70%;
+    flex-direction: column;
+}
+
+.settings-title {
+    color: var(--secondaryColor);
+    font-weight: 500;
+    margin-top: 0;
+    padding-bottom: 30px;
+    font-size: 24px;
+    border-bottom: 0.5px solid rgba(124, 124, 124, 0.28);
+}
+
+.settings div h3 {
+    color: var(--secondaryColor);
+    font-weight: 500;
+    font-size: 24px;
+    margin-left: 25px;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    border-bottom: 0.5px solid rgba(124, 124, 124, 0.28);
+}
+
+.settings-fields-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    /* margin-right: 10px; */
+}
+
+.settings-fields-container .field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 20px;
+    border-bottom: 0.5px solid rgba(124, 124, 124, 0.28);
+}
+
+.settings-fields-container .field .icon {
+    color: white;
+    font-size: 18px;
+}
+
+.settings-fields-container input {
+    background-color: transparent;
+    border: none;
+    height: 50px;
+    color: gray;
+    width: 90%;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.settings-fields-container input:focus-visible {
+    outline: none;
+}
+
+.settings-fields-container .field {
+    padding: 10px 5px;
+}
+
+.settings-fields-container .field p {
+    width: 90%;
+    color: #7C7C7C;
+
+}
+
+.settings .update-btn {
+    border: none;
+    border-radius: 5px;
+    width: 60px;
+    height: 25px;
+    font-size: 16px;
+}
+
+.settings .update-btn:hover {
+    background-color: lightgray;
+}
