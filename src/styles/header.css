@@ -29,7 +29,7 @@
 
 .header .header-options .icon {
     font-size: 32px;
-    color: white;
+    color: var(--secondaryColor);
     width: 32px;
     height: 32px;
     min-width: 32px;

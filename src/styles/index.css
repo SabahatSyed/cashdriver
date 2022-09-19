@@ -4,17 +4,17 @@
 }
 
 ::placeholder {
-  color: rgb(238, 236, 236);
+  color: rgb(221, 220, 220);
 }
 
 /* IE */
 :-ms-input-placeholder {
-  color:rgb(238, 236, 236)
+  color:rgb(221, 220, 220);
 }
 
 /* Edge */
 ::-ms-input-placeholder {
-  color: rgb(238, 236, 236);
+  color: rgb(221, 220, 220);
 }
 
 body {
@@ -24,7 +24,7 @@ body {
   font-family: 'DM Sans';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--secondaryColor);
+  background-color: white;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }

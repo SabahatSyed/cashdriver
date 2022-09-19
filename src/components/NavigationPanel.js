@@ -1,6 +1,5 @@
 import { useNavigate, NavLink } from "react-router-dom";
 import { useAuth } from "../contexts/auth";
-// import { navigationOptions } from "../constants/navigationOptions";
 // import signOutImage from "../assets/signOutImage.png";
 import Logo from "../components/Logo";
 import "../styles/navigationPanel.css";
@@ -18,10 +17,6 @@ const navigationOptions = [
     path: "/users",
     name: "Users",
   },
-  {
-    path: "/w",
-    name: "whatever",
-  },
 ];
 
 const NavigationPanel = (props) => {
@@ -36,7 +31,7 @@ const NavigationPanel = (props) => {
   return (
     <div className="navigation-panel">
       <Logo
-        style={{ width: "90%", marginTop: "20px" }}
+        style={{ width: "90%", marginTop: "50px" }}
         imgStyle={{ width: "90%" }}
       />
       <div className="options-container">
@@ -78,7 +73,11 @@ const NavigationPanel = (props) => {
         {/* <img
           src={signOutImage}
           alt=""
-          style={{ width: "19px", height: "24px" }}
+          style={{
+            width: "19px",
+            height: "24px",
+            color: "var(--primaryColor)",
+          }}
         ></img> */}
         <button className="sign-out" onClick={signOut}>
           Sign out

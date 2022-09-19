@@ -70,17 +70,17 @@
 
 
 .login .button-container .login-button {
-    background-color: var(--primaryColor)
+    background-color: var(--primaryColor);
 }
 
 .login .button-container .create-account {
-    color: white;
+    color: var(--primaryColor);
     background-color: transparent;    
     border: 1px solid var(--primaryColor);
 }
 
 .login .button-container .login-button:hover {
-    background-color: rgb(228, 211, 142);
+    background-color: rgb(184, 182, 182);
 }
 
 .login .button-container .create-account:hover {
