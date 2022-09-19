@@ -25,3 +25,7 @@
     font-size: 24px;
     color: var(--primaryColor)
 }
+
+input:-internal-autofill-selected {
+    background-color: transparent !important;
+}
