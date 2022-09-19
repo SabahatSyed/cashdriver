@@ -11,7 +11,6 @@ const Users = (props) => {
   return (
     <div className="users">
       <TableHeader title="Users" />
-      <h2>Users</h2>
       <div className="search-bar">
         <IoSearchOutline className="icon" />
         <input placeholder="Search user by name or email..." />

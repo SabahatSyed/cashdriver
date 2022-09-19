@@ -5,12 +5,13 @@
     align-items: center;
     border-bottom: 1px solid rgba(124, 124, 124, 0.27);
     /* position: fixed; */
+    margin-bottom: 20px;
 }
 
 .table-header h2 {
     margin: 0;
     font-weight: 400;
-    color: var(--primaryColor);
+    color: var(--secondaryColor);
     border: none;
 }
 

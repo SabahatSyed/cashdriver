@@ -35,7 +35,7 @@
 }
 
 .login .forgot-password {
-    color: white;
+    color: var(--primaryColor);
     font-weight: 400;
     font-size: 15px;
     width: 80%;
@@ -70,7 +70,8 @@
 
 
 .login .button-container .login-button {
-    background-color: var(--primaryColor);
+    color: white;
+    background-color: var(--secondaryColor);
 }
 
 .login .button-container .create-account {
@@ -80,7 +81,7 @@
 }
 
 .login .button-container .login-button:hover {
-    background-color: rgb(184, 182, 182);
+    background-color:  rgba(28, 153, 84, 0.9);
 }
 
 .login .button-container .create-account:hover {
