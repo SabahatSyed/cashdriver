@@ -48,7 +48,7 @@ const Login = (props) => {
             icon2={IoIosEyeOff}
             name="password"
             type="password"
-            placeholder="password"
+            placeholder="Password"
             value={password}
             changeHandler={updatePassword}
             fieldStyle={{ width: "70%" }}
@@ -63,9 +63,9 @@ const Login = (props) => {
           </button>
           <button className="create-account">Create Account</button>
         </div>
-        <p className="caption">
+        {/* <p className="caption">
           Don't have an account? <span>Create</span>
-        </p>
+        </p> */}
       </div>
     </div>
   );

@@ -3,6 +3,10 @@
   --secondaryColor:  rgba(33, 176, 97, 0.9);
 }
 
+::placeholder {
+  color: rgb(238, 236, 236);
+}
+
 body {
   margin: 0 auto;
   min-height: 100vh;
