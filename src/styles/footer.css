@@ -1,0 +1,26 @@
+.footer {
+    height: 10%;
+    margin-top: auto;
+    color: gray;
+    /* border: 1px solid red; */
+    font-size: 16px;
+}
+
+.footer div {
+    float: right;
+    display: flex;
+    align-items: center;
+    margin-right: 190px;
+}
+
+.footer div .icon {
+    font-size: 16px;
+}
+
+.footer div .inactive {
+    /* color: var(); */
+}
+
+.footer div .active {
+    color: var(--secondaryColor);
+}
