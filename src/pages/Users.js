@@ -5,10 +5,12 @@ import ProfilePicture from "../components/ProfilePicture";
 import Footer from "../components/Footer";
 import "../styles/users.css";
 import "../styles/table.css";
+import TableHeader from "../components/TableHeader";
 
 const Users = (props) => {
   return (
     <div className="users">
+      <TableHeader title="Users" />
       <h2>Users</h2>
       <div className="search-bar">
         <IoSearchOutline className="icon" />
