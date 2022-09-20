@@ -55,7 +55,7 @@
 
 .dashboard .graph {
     border: 1px solid var(--primaryColor);
-    width: 500px;
+    width: 300px;
     height: 300px;
     margin-top: 10px;
 }
@@ -66,7 +66,13 @@
     align-items: center;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
+    .dashboard .graph {
+        width: 500px;
+    }
+}
+
+@media (min-width: 960px) {
     .dashboard .transactions-details {
         flex-direction: row;
         justify-content: space-evenly;
@@ -77,5 +83,4 @@
         flex-direction: column;
         align-items: flex-start;
     }
-    
 }
