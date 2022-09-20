@@ -1,7 +1,33 @@
+import { useMemo } from "react";
+import { Chart } from "react-charts";
 import Card from "../components/Card";
 import "../styles/dashboard.css";
 
 const Dashboard = (props) => {
+  const data = useMemo(
+    () => [
+      {
+        label: "Series 1",
+        data: [
+          [0, 1],
+          [1, 2],
+          [2, 4],
+          [3, 2],
+          [4, 7],
+        ],
+      },
+    ],
+    []
+  );
+
+  const axes = useMemo(
+    () => [
+      { primary: true, type: "linear", position: "bottom" },
+      { type: "linear", position: "left" },
+    ],
+    []
+  );
+
   return (
     <div className="dashboard">
       <div className="cash-overview">
@@ -24,7 +50,9 @@ const Dashboard = (props) => {
             <h3>Today's trends</h3>
             <span>as of 1: 32: 4</span>
           </div>
-          <div className="graph"></div>
+          <div className="graph">
+            <Chart data={data} axes={axes} />
+          </div>
         </div>
         <div className="details">
           <Card style={style.detailsCardStyleBorder}>
@@ -67,6 +95,6 @@ const style = {
     width: "150px",
   },
   detailsHeadingStyle: {
-    fontSize: "12px",
+    fontSize: "10px",
   },
 };
