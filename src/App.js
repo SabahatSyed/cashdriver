@@ -6,6 +6,7 @@ import Settings from "./pages/Settings";
 import UserForm from "./pages/UserForm";
 import Users from "./pages/Users";
 import "./styles/app.css";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/add-user" element={<UserForm />} />
