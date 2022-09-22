@@ -10,6 +10,15 @@ const usersReducer = (state, action) => {
         users: users,
       };
     }
+
+    case "ADD_USER": {
+      const updatedUsers = [action.newUser, ...state.users];
+      return {
+        ...state,
+        users: updatedUsers,
+      };
+    }
+
     default: {
       return state;
     }
