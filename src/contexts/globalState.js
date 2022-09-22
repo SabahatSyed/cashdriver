@@ -24,8 +24,15 @@ export const GlobalProvider = (props) => {
     getUsers();
   }, []);
 
+  const addUser = (user) => {
+    dispatch({
+      type: "ADD_USER",
+      newUser: user,
+    });
+  };
+
   return (
-    <GlobalContext.Provider value={{ users: state.users }}>
+    <GlobalContext.Provider value={{ users: state.users, addUser }}>
       {props.children}
     </GlobalContext.Provider>
   );
