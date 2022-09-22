@@ -5,6 +5,7 @@ const usersReducer = (state, action) => {
         data: doc.data(),
         id: doc.id,
       }));
+      console.log("Loading...");
       return {
         ...state,
         users: users,
@@ -13,6 +14,14 @@ const usersReducer = (state, action) => {
 
     case "ADD_USER": {
       const updatedUsers = [action.newUser, ...state.users];
+      return {
+        ...state,
+        users: updatedUsers,
+      };
+    }
+
+    case "DELETE_USER": {
+      const updatedUsers = state.users.filter((user) => user.id !== action.id);
       return {
         ...state,
         users: updatedUsers,
