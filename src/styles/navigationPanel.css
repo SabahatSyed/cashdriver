@@ -85,11 +85,11 @@
     border: none;
     color: var(--secondaryColor);
     background-color: transparent;
-    font-family: 'DM Sans';
+    font-family: 'Poppins';
 }
 
 .navigation-panel .sign-out-container .sign-out:hover {
-    color: rgb(229, 226, 226);
+    color: rgba(28, 153, 84, 0.9);
 }
 
 @media (min-width: 700px) {
