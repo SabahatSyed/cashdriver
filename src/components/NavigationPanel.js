@@ -38,7 +38,7 @@ const NavigationPanel = (props) => {
         <ul>
           {navigationOptions.map((option) => {
             return (
-              <li className="">
+              <li className="" key={option.name}>
                 <NavLink
                   to={option.path}
                   className={({ isActive }) =>
