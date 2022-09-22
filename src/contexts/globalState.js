@@ -31,8 +31,15 @@ export const GlobalProvider = (props) => {
     });
   };
 
+  const deleteUser = (id) => {
+    dispatch({
+      type: "DELETE_USER",
+      id: id,
+    });
+  };
+
   return (
-    <GlobalContext.Provider value={{ users: state.users, addUser }}>
+    <GlobalContext.Provider value={{ users: state.users, addUser, deleteUser }}>
       {props.children}
     </GlobalContext.Provider>
   );
