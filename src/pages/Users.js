@@ -10,7 +10,7 @@ import TableHeader from "../components/TableHeader";
 import { useEffect } from "react";
 
 const Users = (props) => {
-  const { users } = useGlobalState();
+  const { users, deleteUser } = useGlobalState();
 
   useEffect(() => {
     console.log(users);
@@ -60,7 +60,11 @@ const Users = (props) => {
                   <div className="dropdown details">
                     <HiDotsHorizontal />
                     <div className="dropdown-content">
-                      <div>
+                      <div
+                        onClick={() => {
+                          deleteUser(user.id);
+                        }}
+                      >
                         <FaTrash className="icon" /> Delete
                       </div>
                       <div>
