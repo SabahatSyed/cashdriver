@@ -5,6 +5,7 @@ import usersReducer from "./usersReducer";
 
 const initialState = {
   users: [],
+  adminCredentials: {},
 };
 
 export const GlobalContext = createContext(initialState);
@@ -14,10 +15,13 @@ export const GlobalProvider = (props) => {
 
   useEffect(() => {
     const getUsers = async () => {
+      console.log("Loading...");
       const data = await getDocs(collection(db, "users"));
+      const adminData = await getDocs(collection(db, "admin"));
       dispatch({
         type: "INITIALIZE",
         data: data,
+        adminData: adminData,
       });
     };
 
@@ -38,8 +42,31 @@ export const GlobalProvider = (props) => {
     });
   };
 
+  const updateAdminPassword = (newPassword) => {
+    dispatch({
+      type: "UPDATE_ADMIN_PASSWORD",
+      newPassword: newPassword,
+    });
+  };
+
+  const updateAdminWalletKey = (newWalletKey) => {
+    dispatch({
+      type: "UPDATE_ADMIN_WalletKey",
+      newWalletKey: newWalletKey,
+    });
+  };
+
   return (
-    <GlobalContext.Provider value={{ users: state.users, addUser, deleteUser }}>
+    <GlobalContext.Provider
+      value={{
+        users: state.users,
+        adminCredentials: state.adminCredentials,
+        addUser,
+        deleteUser,
+        updateAdminPassword,
+        updateAdminWalletKey,
+      }}
+    >
       {props.children}
     </GlobalContext.Provider>
   );
