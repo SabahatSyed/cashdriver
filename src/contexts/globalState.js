@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import usersReducer from "./usersReducer";
 
@@ -36,6 +36,15 @@ export const GlobalProvider = (props) => {
   };
 
   const deleteUser = (id) => {
+    const userRef = doc(db, "users", id);
+    (async () => {
+      try {
+        await deleteDoc(userRef);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+
     dispatch({
       type: "DELETE_USER",
       id: id,
