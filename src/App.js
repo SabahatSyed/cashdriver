@@ -10,19 +10,20 @@ import "./styles/app.css";
 
 function App() {
   return (
-      <div className="app">
-        <NavigationPanel />
-        <Container>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/add-user" element={<UserForm />} />
-          </Routes>
-        </Container>
-      </div>
+    <div className="app">
+      <NavigationPanel />
+      <Container>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/add-user" element={<UserForm />} />
+          <Route path="/edit-user" element={<UserForm />} />
+        </Routes>
+      </Container>
+    </div>
   );
 }
 

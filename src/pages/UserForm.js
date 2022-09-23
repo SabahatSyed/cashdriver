@@ -1,21 +1,30 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { db } from "../firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
 import { useGlobalState } from "../contexts/globalState";
 import "../styles/userForm.css";
 
 const UserForm = (props) => {
   const navigate = useNavigate();
-  const { addUser } = useGlobalState();
+  const { state } = useLocation();
+  const { addUser, editUser } = useGlobalState();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [contact, setContact] = useState("");
-  const [walletKey, setWalletKey] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState(state ? state.user.data.name : "");
+  const [email, setEmail] = useState(state ? state.user.data.email : "");
+  const [address, setAddress] = useState(state ? state.user.data.address : "");
+  const [contact, setContact] = useState(
+    state ? state.user.data.phoneNumber : ""
+  );
+  const [walletKey, setWalletKey] = useState(
+    state ? state.user.data.cryptoWalletKey : ""
+  );
+  const [password, setPassword] = useState(
+    state ? state.user.data.password : ""
+  );
+  const [confirmPassword, setConfirmPassword] = useState(
+    state ? state.user.data.password : ""
+  );
   const [error, setError] = useState(false);
 
   const submitUser = async () => {
@@ -43,11 +52,22 @@ const UserForm = (props) => {
         dateJoined: new Date().toDateString().slice(4),
       };
       try {
-        const user = await addDoc(collection(db, "users"), newUser);
-        addUser({
-          data: newUser,
-          id: user.id,
-        });
+        if (state) {
+          //Update
+          const userRef = doc(db, "users", state.user.id);
+          await updateDoc(userRef, newUser);
+          editUser({
+            data: newUser,
+            id: state.user.id,
+          });
+        } else {
+          //Add new
+          const user = await addDoc(collection(db, "users"), newUser);
+          addUser({
+            data: newUser,
+            id: user.id,
+          });
+        }
         navigate("/users");
       } catch (err) {
         console.log(err);

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useGlobalState } from "../contexts/globalState";
 import { HiDotsHorizontal } from "react-icons/hi";
 import { IoSearchOutline, IoInformationCircleOutline } from "react-icons/io5";
@@ -7,14 +9,18 @@ import Footer from "../components/Footer";
 import "../styles/users.css";
 import "../styles/table.css";
 import TableHeader from "../components/TableHeader";
-import { useEffect } from "react";
 
 const Users = (props) => {
   const { users, deleteUser } = useGlobalState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(users);
   }, []);
+
+  const updateUser = (user) => {
+    navigate("/edit-user", { state: { user: user } });
+  };
 
   return (
     <div className="users">
@@ -67,7 +73,7 @@ const Users = (props) => {
                       >
                         <FaTrash className="icon" /> Delete
                       </div>
-                      <div>
+                      <div onClick={() => updateUser(user)}>
                         <IoInformationCircleOutline className="icon" />
                         Edit
                       </div>
