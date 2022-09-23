@@ -1,15 +1,17 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
-// import { IoLockClosedOutline, IoPencil } from "react-icons/io5";
-import "../styles/settings.css";
 import { useGlobalState } from "../contexts/globalState";
+
+import "../styles/settings.css";
 
 const Settings = (props) => {
   const { adminCredentials, updateAdminPassword, updateAdminWalletKey } =
     useGlobalState();
   const [password, setPassword] = useState("");
   const [adminKey, setAdminKey] = useState("");
+  const navigate = useNavigate();
 
   const updatePassword = async () => {
     if (password !== "") {
@@ -19,6 +21,7 @@ const Settings = (props) => {
           password: password,
         });
         updateAdminPassword(password);
+        navigate("/dashboard", { replace: true });
       } catch (err) {
         console.log(err);
       }
@@ -33,6 +36,7 @@ const Settings = (props) => {
           walletKey: adminKey,
         });
         updateAdminWalletKey(adminKey);
+        navigate("/dashboard", { replace: true });
       } catch (err) {
         console.log(err);
       }
