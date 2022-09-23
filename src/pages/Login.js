@@ -7,10 +7,12 @@ import { IoIosEyeOff } from "react-icons/io";
 import InputField from "../components/InputField";
 import Logo from "../components/Logo";
 import "../styles/login.css";
+import { useGlobalState } from "../contexts/globalState";
 
 const Login = (props) => {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const { adminCredentials } = useGlobalState();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +22,10 @@ const Login = (props) => {
   const updatePassword = (e) => setPassword(e.target.value);
 
   const loginUser = (e) => {
-    if (email === "admin@gmail.com" && password === "admin") {
+    if (
+      email === adminCredentials.email &&
+      password === adminCredentials.password
+    ) {
       login("admin");
       localStorage.setItem("user", "admin");
       navigate("/", { replace: true });
