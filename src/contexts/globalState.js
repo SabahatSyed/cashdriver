@@ -35,6 +35,13 @@ export const GlobalProvider = (props) => {
     });
   };
 
+  const editUser = (updatedUser) => {
+    dispatch({
+      type: "EDIT_USER",
+      updatedUser: updatedUser,
+    });
+  };
+
   const deleteUser = (id) => {
     const userRef = doc(db, "users", id);
     (async () => {
@@ -71,6 +78,7 @@ export const GlobalProvider = (props) => {
         users: state.users,
         adminCredentials: state.adminCredentials,
         addUser,
+        editUser,
         deleteUser,
         updateAdminPassword,
         updateAdminWalletKey,
