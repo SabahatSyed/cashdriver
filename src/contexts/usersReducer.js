@@ -27,6 +27,18 @@ const usersReducer = (state, action) => {
       };
     }
 
+    case "EDIT_USER": {
+      const updatedUsers = state.users;
+      const index = updatedUsers.findIndex(
+        (user) => user.id === action.updatedUser.id
+      );
+      updatedUsers[index] = action.updatedUser;
+      return {
+        ...state,
+        user: updatedUsers,
+      };
+    }
+
     case "DELETE_USER": {
       const updatedUsers = state.users.filter((user) => user.id !== action.id);
       return {
