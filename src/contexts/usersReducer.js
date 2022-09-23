@@ -5,10 +5,17 @@ const usersReducer = (state, action) => {
         data: doc.data(),
         id: doc.id,
       }));
-      console.log("Loading...");
+      const admin = action.adminData.docs[0].data();
+      console.log("Loaded");
       return {
         ...state,
         users: users,
+        adminCredentials: {
+          password: admin.password,
+          adminWalletKey: admin.walletKey,
+          email: admin.email,
+          id: action.adminData.docs[0].id,
+        },
       };
     }
 
@@ -25,6 +32,24 @@ const usersReducer = (state, action) => {
       return {
         ...state,
         users: updatedUsers,
+      };
+    }
+
+    case "UPDATE_ADMIN_PASSWORD": {
+      const updateCredentials = state.adminCredentials;
+      updateCredentials.password = action.newPassword;
+      return {
+        ...state,
+        adminCredentials: updateCredentials,
+      };
+    }
+
+    case "UPDATE_ADMIN_WalletKey": {
+      const updateCredentials = state.adminCredentials;
+      updateCredentials.adminWalletKey = action.newWalletKey;
+      return {
+        ...state,
+        adminCredentials: updateCredentials,
       };
     }
 
