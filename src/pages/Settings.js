@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "./firebase";
+import { db } from "../firebase";
 // import { IoLockClosedOutline, IoPencil } from "react-icons/io5";
 import "../styles/settings.css";
 import { useGlobalState } from "../contexts/globalState";
