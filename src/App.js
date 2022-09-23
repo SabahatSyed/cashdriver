@@ -1,5 +1,4 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import { GlobalProvider } from "./contexts/globalState";
 import NavigationPanel from "./components/NavigationPanel";
 import Container from "./components/Container";
 import Header from "./components/Header";
@@ -11,7 +10,6 @@ import "./styles/app.css";
 
 function App() {
   return (
-    <GlobalProvider>
       <div className="app">
         <NavigationPanel />
         <Container>
@@ -25,7 +23,6 @@ function App() {
           </Routes>
         </Container>
       </div>
-    </GlobalProvider>
   );
 }
 
