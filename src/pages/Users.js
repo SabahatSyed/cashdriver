@@ -85,7 +85,7 @@ const Users = (props) => {
           })}
         </table>
       </div>
-      <Footer contentStyle={{ marginRight: "20px" }} />
+      {/* <Footer contentStyle={{ marginRight: "20px" }} /> */}
     </div>
   );
 };

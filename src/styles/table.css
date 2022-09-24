@@ -22,8 +22,12 @@
     /* border-bottom: 1px solid red; */
 }
 
+.table table {
+    border: 1px solid var(--secondaryColor);
+}
+
 .table table, th {
-    border-collapse: collapse;
+    border-collapse: collapse;  
 }
 
 .table table th {
@@ -34,20 +38,10 @@
 
 .table table td {
     height: 40px;
-    color: var(--primaryColor);
+    /* color: var(--primaryColor); */
     font-size: 16px;
     /* text-align: center; */
     padding: 20px 16px;
-}
-
-.table table td button {
-    width: 75px;
-    /* height: 20px; */
-    border: none;
-    color: white;
-    padding: 5px 5px;
-    border-radius: 3px;
-    font-family: 'DM Sans';
 }
 
 .table table td .name {
@@ -55,17 +49,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--primaryColor);
+    /* color: var(--primaryColor); */
     /* border: 1px solid red; */
-}
-
-.table table td .accept {
-    background-color: #E6B970;
-}
-
-.table table td .decline {
-    margin-left: 4px;
-    background-color: rgb(92, 91, 91);
 }
 
 .table table td .details {
@@ -79,7 +64,12 @@
 }
 
 .table tr:nth-child(odd) {
+    color: black;
     background-color: var(--secondaryColor);
+}
+
+.table tr:nth-child(even) {
+    color: var(--primaryColor);
 }
 
 .table .dropdown {

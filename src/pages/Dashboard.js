@@ -31,10 +31,10 @@ const Dashboard = (props) => {
   return (
     <div className="dashboard">
       <div className="cash-overview">
-        <Card>
+        <Card style={{width: '500px'}} >
           <h3>Total</h3> <span>$21,360</span>
         </Card>
-        <Card>
+        {/* <Card>
           <h3>Available</h3> <span>$21,360</span>
         </Card>
         <Card>
@@ -42,7 +42,7 @@ const Dashboard = (props) => {
         </Card>
         <Card>
           <h3>Clearance</h3> <span>$21,360</span>
-        </Card>
+        </Card> */}
       </div>
       <div className="transactions-details">
         <div className="graph-container">
@@ -56,22 +56,22 @@ const Dashboard = (props) => {
         </div>
         <div className="details">
           <Card style={style.detailsCardStyleBorder}>
-            <h3 style={style.detailsHeadingStyle}>Total Orders</h3>{" "}
+            <h3 style={style.detailsHeadingStyle}>Total Payments</h3>{" "}
             <span>$21,360</span>
           </Card>
-          <Card style={style.detailsCardStyleBorderLight}>
+          <Card style={style.detailsCardStyleBorder}>
             <h3 style={style.detailsHeadingStyle}>Average Location Distance</h3>{" "}
             <span>25km</span>
           </Card>
-          <Card style={style.detailsCardStyleBorderLight}>
+          {/* <Card style={style.detailsCardStyleBorderLight}>
             <h3 style={style.detailsHeadingStyle}>
               Average First Response Time
             </h3>{" "}
             <span>33m</span>
-          </Card>
+          </Card> */}
           <Card style={style.detailsCardStyleBorder}>
-            <h3 style={style.detailsHeadingStyle}>Average Response Time</h3>{" "}
-            <span>3h 8m</span>
+            <h3 style={style.detailsHeadingStyle}>Weekly Points</h3>{" "}
+            <span>33</span>
           </Card>
         </div>
       </div>
