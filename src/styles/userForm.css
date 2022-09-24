@@ -1,0 +1,48 @@
+.user-form {
+    /* width: 70%; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.user-form form {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+.user-form form label { 
+    margin-left: 5px;
+    color: var(--secondaryColor);
+}
+
+.user-form form input {
+    height: 30px;
+    width: 220px;
+    padding: 0 15px;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid var(--primaryColor);
+}
+
+.user-form form input:focus-visible {
+    outline: 1px solid lightblue;
+}
+
+.user-form .submit-btn {
+    border: none;
+    width: 150px;
+    height: 30px;
+    margin: 20px 0;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: var(--secondaryColor);
+}
+
+.user-form .submit-btn:hover {
+    background-color:  rgba(28, 153, 84, 0.9);   
+}

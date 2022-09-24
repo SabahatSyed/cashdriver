@@ -1,0 +1,58 @@
+:root {
+  --primaryColor: lightgray;
+  --secondaryColor:  rgba(33, 176, 97, 0.9);
+}
+
+::placeholder {
+  color: rgb(221, 220, 220);
+}
+
+/* IE */
+:-ms-input-placeholder {
+  color:rgb(221, 220, 220);
+}
+
+/* Edge */
+::-ms-input-placeholder {
+  color: rgb(221, 220, 220);
+}
+
+body {
+  margin: 0 auto;
+  min-height: 100vh;
+  /* border: 1px solid red; */
+  font-family: 'Poppins';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.center-container {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+
+input, button {
+  font-family: 'Poppins';
+}

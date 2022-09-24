@@ -1,0 +1,131 @@
+.table {
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.table::-webkit-scrollbar {
+    display: none;
+}
+
+.table table {
+    /* width: 90%; */
+    width: 850px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.table th {
+    color: var(--secondaryColor);
+    font-weight: 400;
+    font-size: small;
+    /* border-bottom: 1px solid red; */
+}
+
+.table table {
+    border: 1px solid var(--secondaryColor);
+}
+
+.table table, th {
+    border-collapse: collapse;  
+}
+
+.table table th {
+    height: 40px;
+    text-align: left;
+    padding: 20px 16px;
+}
+
+.table table td {
+    height: 40px;
+    /* color: var(--primaryColor); */
+    font-size: 16px;
+    /* text-align: center; */
+    padding: 20px 16px;
+}
+
+.table table td .name {
+    width: 145px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* color: var(--primaryColor); */
+    /* border: 1px solid red; */
+}
+
+.table table td .details {
+    float: right;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.table tr {
+    height: 55px;
+}
+
+.table tr:nth-child(odd) {
+    color: black;
+    background-color: var(--secondaryColor);
+}
+
+.table .dropdown {
+    width: auto;
+    height: auto;
+}
+
+.table .dropdown .dropdown-content {
+    margin-left: -140px;
+}
+
+@media (min-width: 950px) {
+    .table table {
+        width: 100%;
+        /* width: 850px; */
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+}
+
+.dropdown {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    /* border: 1px solid red; */
+    display: none;
+    position: absolute;
+    background-color: var(--secondaryColor);
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    /* margin-left: -50px; */
+}
+
+.dropdown-content div {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    /* justify-content: space-between; */
+}  
+
+.dropdown-content div:hover {
+    cursor: pointer;
+    background-color:  rgba(28, 153, 84, 0.9);
+}
+
+.dropdown-content div .icon {
+    margin-right: 10px;
+    color: var(--primaryColor);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
